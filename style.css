@@ -1,0 +1,443 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: url('nuvem.gif') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navegacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: rgba(2, 48, 71, 0);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: navbarSlide 1s ease forwards;
+}
+
+.navegacao .logo img {
+  width: 120px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.menu li a:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+  animation: bannerZoom 20s ease-in-out infinite alternate;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  text-align: center;
+}
+
+.banner-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: fadeInTop 1s ease forwards;
+}
+
+.banner-overlay p {
+  font-size: 1.2rem;
+  animation: fadeIn 2s ease forwards;
+}
+
+/* Seções */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #0077b6;
+  animation: fadeInTop 1s ease forwards;
+}
+
+/* Cards - MELHORIAS NO ESPAÇAMENTO E IMAGENS */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  padding: 20px 0;
+  margin: 30px 0;
+}
+
+.card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgb(0, 247, 255);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  padding-bottom: 25px;
+  animation: fadeIn 1s ease forwards;
+  margin: 10px 0;
+}
+
+/* IMAGEM EM TAMANHO MÉDIO */
+.card img {
+  width: 85%; /* Reduzi a largura para 85% */
+  height: 160px; /* Altura média */
+  object-fit: cover;
+  border-radius: 10px; /* Bordas arredondadas na imagem */
+  margin: 15px auto; /* Centraliza a imagem e dá espaçamento */
+  display: block;
+  border: 3px solid #0077b6; /* Borda sutil */
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05); /* Efeito de zoom suave no hover */
+}
+
+.card h3 {
+  margin: 20px 0 15px 0;
+  color: #023047;
+  font-size: 1.3rem;
+}
+
+.card p {
+  padding: 0 20px;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 247, 255, 0.4);
+  margin: 15px 0;
+}
+
+/* Container específico para cards de conservação */
+.conservacao-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  padding: 40px 0;
+  margin: 40px 0;
+}
+
+/* Card especial para conservação */
+.card-conservacao {
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 247, 255, 0.6);
+  transition: all 0.3s ease;
+  text-align: center;
+  padding: 0 0 30px 0;
+  margin: 20px 0;
+}
+
+/* Imagem média para card de conservação */
+.card-conservacao img {
+  width: 80%; /* Ligeiramente menor para destaque */
+  height: 170px; /* Altura um pouco maior */
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 20px auto;
+  display: block;
+  border: 4px solid #00bfff; /* Borda diferente para destaque */
+  transition: transform 0.3s ease;
+}
+
+.card-conservacao:hover img {
+  transform: scale(1.08); /* Zoom um pouco maior no hover */
+}
+
+.card-conservacao:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 18px 35px rgba(0, 247, 255, 0.5);
+}
+
+/* Contato */
+.contato form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contato input, .contato textarea {
+  padding: 12px 15px;
+  border: 2px solid #0077b6;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contato button {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #00bfff;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contato button:hover {
+  background: #0077b6;
+}
+
+.aviso-tubarao {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #00BFFF;
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+  max-width: 700px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.aviso-img {
+  width: 220px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+.aviso-texto h2 {
+  margin-bottom: 10px;
+  color: #FFD700;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.aviso-texto p {
+  margin: 5px 0;
+  line-height: 1.5;
+}
+
+.video-container {
+  position: relative;
+  width: 70%;          /* controla a largura do vídeo */
+  max-width: 700px;    /* limite para não ficar grande demais */
+  margin: 20px auto;   /* centraliza */
+  aspect-ratio: 16/9;  /* mantém proporção correta */
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px; /* opcional: cantos arredondados */
+}
+
+
+footer {
+  background-color: #023047;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-botoes {
+  margin-top: 10px;
+}
+
+.botao-footer {
+  display: inline-block;
+  background-color: #ff6f61;
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.botao-footer:hover {
+  background-color: #ff3b2f;
+  transform: scale(1.05);
+}
+
+.quadrado-animado {
+    width: 200px;
+    height: 150px;
+    background: linear-gradient(270deg, #00BFFF, #1E90FF, #00CED1, #00BFFF);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    animation: animarQuadrado 5s ease infinite;
+}
+
+@keyframes animarQuadrado {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animações */
+@keyframes fadeInTop {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes navbarSlide {
+  0% { transform: translateY(-100px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes bannerZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+/* ===========================
+   Modo Caça de Tubarões com GIFs
+=========================== */
+.modo-caca {
+    background: linear-gradient(to bottom, #001f33, #003366);
+    color: #fff;
+    padding: 80px 20px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.modo-caca h2 {
+    font-size: 2.5rem;
+    color: #00bfff;
+    text-shadow: 0 0 10px #00bfff;
+    margin-bottom: 20px;
+}
+
+.modo-caca .descricao {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.oceano {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to bottom, #003366, #001f33);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Tubarão nadando com GIF */
+.tubarao {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 50%;
+    left: -150px;
+    animation: nadar 12s linear infinite;
+}
+
+@keyframes nadar {
+    0% { left: -150px; top: 40%; transform: rotate(0deg); }
+    25% { left: 30%; top: 30%; transform: rotate(5deg); }
+    50% { left: 60%; top: 50%; transform: rotate(-5deg); }
+    75% { left: 80%; top: 35%; transform: rotate(10deg); }
+    100% { left: 100%; top: 45%; transform: rotate(0deg); }
+}
+
+/* Presa com GIF */
+.presa {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 60%;
+    left: 100%;
+    animation: fugir 10s linear infinite;
+}
+
+@keyframes fugir {
+    0% { left: 100%; top: 55%; }
+    25% { left: 70%; top: 50%; }
+    50% { left: 40%; top: 60%; }
+    75% { left: 20%; top: 50%; }
+    100% { left: -50px; top: 55%; }
+}
+
+/* Bolhas subindo */
+.bolha {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    bottom: 0;
+    animation: subir 6s linear infinite;
+}
+
+.bolha:nth-child(1) { left: 20%; animation-duration: 5s; }
+.bolha:nth-child(2) { left: 50%; animation-duration: 7s; }
+.bolha:nth-child(3) { left: 80%; animation-duration: 6s; }
+
+@keyframes subir {
+    0% { bottom: 0; opacity: 0.5; transform: scale(1); }
+    50% { bottom: 200px; opacity: 0.8; transform: scale(1.3); }
+    100% { bottom: 400px; opacity: 0; transform: scale(0.5); }
+}
